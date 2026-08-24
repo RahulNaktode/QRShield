@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { 
   ShieldCheck, 
-  Cpu, 
-  Volume2, 
-  Lock, 
   Code2, 
   CheckCircle2, 
-  UserCheck
+  Cpu
 } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import Features from '../components/Features';
@@ -18,27 +15,9 @@ import Footer from '../components/Footer';
 export default function About({ initialLang = 'en' }) {
   const [currentLang, setCurrentLang] = useState(initialLang);
 
-  // Uses imported I18N dictionary fallback seamlessly
+  // Translation helper with I18N dictionary fallback
   const d = I18N?.[currentLang] || I18N?.en || {};
   const t = (key) => d?.[key] || key;
-
-  const features = [
-    {
-      icon: <Cpu className="w-6 h-6 text-cyan-400" />,
-      title: "AI Threat Detection",
-      description: "Deep payload analysis using heuristic scanning to identify phishing URLs, dangerous downloads, and suspicious redirects instantly."
-    },
-    {
-      icon: <Volume2 className="w-6 h-6 text-cyan-400" />,
-      title: "Voice-Assisted Alerts",
-      description: "Accessibility-first design providing instant real-time spoken feedback in English, Hindi, and Marathi."
-    },
-    {
-      icon: <Lock className="w-6 h-6 text-cyan-400" />,
-      title: "Privacy First Architecture",
-      description: "Camera feed is processed client-side. No video frames or personal camera data are ever stored on external servers."
-    }
-  ];
 
   const techStack = [
     { category: "Frontend Framework", name: "React.js" },
@@ -50,66 +29,69 @@ export default function About({ initialLang = 'en' }) {
   ];
 
   return (
-    <div className="bg-[#0A0E15] text-[#EAEEF6] min-h-screen w-full font-sans selection:bg-[#4C7CF3] selection:text-white">
-      {/* Passed missing language handler props to Header */}
+    <div className="bg-slate-950 text-slate-100 min-h-screen w-full font-sans selection:bg-cyan-500 selection:text-slate-950 flex flex-col justify-between">
+      {/* Navigation Header */}
       <Header 
         currentLang={currentLang} 
         onLanguageChange={setCurrentLang} 
         t={t} 
       />
 
-      <div id="about" className="min-h-screen bg-slate-950 text-slate-100 p-4 md:p-8 font-sans flex flex-col items-center">
-        
-        <div className="max-w-6xl w-full space-y-12 py-6">
-          
-          <Hero t={t} />
+      <main className="w-full flex-grow">
+        {/* Main Hero Section */}
+        <Hero t={t} />
 
-          {/* Feature Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, idx) => (
-              <div 
-                key={idx} 
-                className="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl flex flex-col items-start gap-4 hover:border-cyan-500/50 transition duration-300"
-              >
-                <div className="p-3 bg-slate-950 rounded-xl border border-slate-800">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white">{feature.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+        {/* Features Showcase */}
+        <Features t={t} />
+
+        {/* Workflow Component */}
+        <HowItWorks t={t} />
+
+        {/* Technology Architecture Section */}
+        <section className="max-w-[1240px] mx-auto px-4 sm:px-6 py-16 relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+          {/* Section Header */}
+          <div className="mb-10 text-center max-w-xl mx-auto">
+            <span className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-cyan-400 uppercase tracking-widest bg-cyan-950/60 border border-cyan-500/30 px-3.5 py-1.5 rounded-full mb-3 shadow-sm shadow-cyan-500/10">
+              <Cpu size={13} />
+              {t("tech_stack_eyebrow") || "Engineered for Speed & Security"}
+            </span>
+
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight flex items-center justify-center gap-2">
+              <Code2 className="w-7 h-7 text-cyan-400" />
+              <span>{t("tech_stack_h2") || "Technology Architecture"}</span>
+            </h2>
           </div>
 
-          {/* Reusable HowItWorks Component */}
-          <HowItWorks t={t} />
-
-          {/* Tech Stack Table */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 space-y-6">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <Code2 className="w-6 h-6 text-cyan-400" /> Technology Architecture
-            </h2>
+          {/* Grid Container */}
+          <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-xl max-w-4xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {techStack.map((tech, idx) => (
-                <div key={idx} className="flex items-center gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <div>
-                    <div className="text-[10px] text-slate-500 uppercase tracking-wider">{tech.category}</div>
-                    <div className="text-xs font-semibold text-slate-200">{tech.name}</div>
+                <div 
+                  key={idx} 
+                  className="group flex items-center gap-3.5 bg-slate-950/80 p-4 rounded-xl border border-slate-800/90 hover:border-cyan-500/40 transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:bg-emerald-500/20 transition-colors">
+                    <CheckCircle2 className="w-4 h-4" />
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="text-[10px] text-slate-400 uppercase tracking-wider font-mono font-medium">
+                      {tech.category}
+                    </div>
+                    <div className="text-xs sm:text-sm font-semibold text-slate-200 truncate group-hover:text-cyan-400 transition-colors">
+                      {tech.name}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        </section>
+      </main>
 
-          {/* Features Component */}
-          <Features t={t} />
-
-          <Footer t={t} />
-
-        </div>
-      </div>
+      {/* Footer */}
+      <Footer t={t} />
     </div>
   );
 }

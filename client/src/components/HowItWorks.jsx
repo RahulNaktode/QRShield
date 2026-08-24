@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   AlertTriangle,
   XCircle,
+  Sparkles
 } from "lucide-react";
 
 import FlowBox from "./FlowBox";
@@ -16,14 +17,21 @@ function HowItWorks({ t }) {
   return (
     <section id="how" className="max-w-[1180px] mx-auto px-6 py-16">
       {/* Header Section */}
-      <div className="mb-10 text-left">
-        <span className="font-mono text-xs text-cyan-400 uppercase tracking-widest bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
-          {t("how_eyebrow")}
+      <div className="mb-12 text-center max-w-2xl mx-auto relative z-10">
+        <span className="inline-flex items-center gap-2 font-mono text-xs font-semibold text-cyan-400 uppercase tracking-widest bg-cyan-950/60 border border-cyan-500/30 px-3.5 py-1.5 rounded-full shadow-sm shadow-cyan-500/10">
+          <Sparkles size={13} className="animate-pulse" />
+          {t("how_eyebrow") || "Detection Pipeline"}
         </span>
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mt-3 tracking-tight">
-          {t("how_h2")}
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-100 mt-4 tracking-tight leading-tight">
+          {t("how_h2") || "How Our AI Engine Protects You"}
         </h2>
+        
+        {t("how_sub") && (
+          <p className="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">
+            {t("how_sub")}
+          </p>
+        )}
       </div>
 
       {/* Process Flow Card Container */}

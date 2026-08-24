@@ -26,23 +26,25 @@ export const I18N = {
     viewfinder_label:
       "AWAITING INPUT — DROP A QR IMAGE BELOW",
 
-    how_eyebrow: "HOW IT WORKS",
-    how_h2: "Two independent checks, one verdict",
+    // How It Works Pipeline Section (Exact match with component)
+    how_eyebrow: "DETECTION PIPELINE",
+    how_h2: "How Our AI Engine Protects You",
+    how_sub: "From scan to instant threat analysis in four automated real-time steps.",
 
-    flow_upload_title: "User uploads QR",
-    flow_upload_sub: "image or camera scan",
+    flow_upload_title: "Upload Code",
+    flow_upload_sub: "Image or camera scan",
 
-    flow_decode_title: "QR decoder",
-    flow_decode_sub: "extracts hidden URL",
+    flow_decode_title: "QR Decoder",
+    flow_decode_sub: "Extracts hidden URL",
 
-    flow_url_title: "URL analysis",
+    flow_url_title: "URL Analysis",
     flow_url_sub: "ML risk model",
 
-    flow_image_title: "Image analysis",
-    flow_image_sub: "tamper detection CNN",
+    flow_image_title: "Image Analysis",
+    flow_image_sub: "Tamper detection CNN",
 
-    flow_engine_title: "AI decision engine",
-    flow_engine_sub: "combines both scores",
+    flow_engine_title: "AI Decision Engine",
+    flow_engine_sub: "Combines both scores",
 
     pill_safe: "Safe",
     pill_suspicious: "Suspicious",
@@ -121,6 +123,18 @@ export const I18N = {
     f6b:
       "Deep-learning image checks catch sticker overlays and swapped QR codes.",
 
+    f7t: "AI Threat Detection",
+    f7b:
+      "Deep payload analysis using heuristic scanning to identify phishing URLs, dangerous downloads, and suspicious redirects instantly.",
+
+    f8t: "Voice-Assisted Alerts",
+    f8b:
+      "Accessibility-first design providing instant real-time spoken feedback in English, Hindi, and Marathi.",
+
+    f9t: "Privacy First Architecture",
+    f9b:
+      "Camera feed is processed client-side. No video frames or personal camera data are ever stored on external servers.",
+
     strip_label:
       "Cross-checked against live threat-intelligence feeds",
 
@@ -175,5 +189,5 @@ export const I18N = {
     },
   },
 
-  // Keep your existing hi, mr, te and ta objects here.
+  // Keep existing hi, mr, te, ta objects below...
 };
