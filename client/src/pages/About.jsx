@@ -30,12 +30,7 @@ export default function About({ initialLang = 'en' }) {
 
   return (
     <div className="bg-slate-950 text-slate-100 min-h-screen w-full font-sans selection:bg-cyan-500 selection:text-slate-950 flex flex-col justify-between">
-      {/* Navigation Header */}
-      <Header 
-        currentLang={currentLang} 
-        onLanguageChange={setCurrentLang} 
-        t={t} 
-      />
+      
 
       <main className="w-full flex-grow">
         {/* Main Hero Section */}

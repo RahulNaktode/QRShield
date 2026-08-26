@@ -2,9 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { BrowserMultiFormatReader, BarcodeFormat, DecodeHintType } from '@zxing/library';
 import axios from 'axios';
 import { ShieldAlert, ShieldCheck, Camera, RefreshCw, Loader2, Sparkles, Globe } from 'lucide-react';
-import Header from '../components/Header';
+import Header from './Header';
 import { I18N } from "../data/i18n";
-
 
 export default function App({ initialLang = "en" }) {
   const [result, setResult] = useState(null);
@@ -95,10 +94,10 @@ export default function App({ initialLang = "en" }) {
   };
 
   return (
-    <div className="bg-[#0A0E15] text-[#EAEEF6] min-h-screen w-full font-sans selection:bg-[#4C7CF3] selection:text-white flex flex-col">
+    <div className="bg-[#0A0E15] text-[#EAEEF6] font-sans selection:bg-[#4C7CF3] selection:text-white flex flex-col">
       
       
-      <div className="flex-1 bg-slate-950 text-white flex flex-col items-center justify-center p-4 font-sans">
+      <div className="flex-1 bg-slate-950 text-white flex flex-col  p-4 font-sans">
         <audio ref={audioRef} />
 
         <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl flex flex-col items-center transition-all duration-300">

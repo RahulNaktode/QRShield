@@ -1,13 +1,6 @@
 import { useState, useRef, useCallback } from "react";
-
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import HowItWorks from "../components/HowItWorks";
-import Features from "../components/Features";
 import Footer from "../components/Footer";
 import LiveDemo from "../components/LiveDemo.jsx";
-import LiveScan from "../components/LiveScan.jsx";
-import ScanHistory from "../components/ScanHistory";
 
 import { I18N } from "../data/i18n";
 import { speakVerdict } from "../utils/speech";
@@ -149,12 +142,22 @@ function QRShieldPage() {
 
   return (
     <div className="bg-[#0A0E15] text-[#EAEEF6] min-h-screen w-full font-sans selection:bg-[#4C7CF3] selection:text-white">
-      <Header
-        currentLang={currentLang}
-        onLanguageChange={onLanguageChange}
-        t={t}
-      />
-
+      
+       <div className="mb-8">
+        <span className="font-mono text-xs text-[#4C7CF3] tracking-wider">
+          {t("demo_eyebrow")}
+        </span>
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#EAEEF6] mt-2">
+          {t("demo_h2")}
+        </h2>
+        <p className="text-[#8A94AA] text-sm mt-2 max-w-xl">
+          {t("demo_sub_pre")}{" "}
+          <code className="bg-[#1B2333] px-1.5 py-0.5 rounded font-mono text-xs">
+            /api/analyze-qr
+          </code>{" "}
+          {t("demo_sub_post")}
+        </p>
+      </div>
       <LiveDemo
         t={t}
         d={d}

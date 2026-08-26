@@ -116,21 +116,6 @@ function LiveDemo({
 
   return (
     <section id="demo" className="max-w-[1180px] mx-auto px-6 py-16 relative">
-      <div className="mb-8">
-        <span className="font-mono text-xs text-[#4C7CF3] tracking-wider">
-          {t("demo_eyebrow")}
-        </span>
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#EAEEF6] mt-2">
-          {t("demo_h2")}
-        </h2>
-        <p className="text-[#8A94AA] text-sm mt-2 max-w-xl">
-          {t("demo_sub_pre")}{" "}
-          <code className="bg-[#1B2333] px-1.5 py-0.5 rounded font-mono text-xs">
-            /api/analyze-qr
-          </code>{" "}
-          {t("demo_sub_post")}
-        </p>
-      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
         {/* Input panel */}

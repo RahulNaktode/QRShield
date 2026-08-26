@@ -15,11 +15,7 @@ export default function ScanHistory({ refreshTrigger, initialLang = "en" }) {
 
   return (
     <div className="bg-[#0A0E15] text-[#EAEEF6] min-h-screen w-full font-sans selection:bg-[#4C7CF3] selection:text-white">
-      <Header 
-        currentLang={currentLang} 
-        onLanguageChange={setCurrentLang} 
-        t={t} 
-      />
+      
 <div className="min-h-screen bg-slate-950 text-slate-100 p-4 md:p-8 font-sans flex flex-col items-center">
       <section className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-6">
