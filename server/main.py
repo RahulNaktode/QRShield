@@ -11,6 +11,7 @@ from fastapi.responses import JSONResponse
 from gtts import gTTS
 from pydantic import BaseModel
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
 # AI Module File Integration
 from ai_analyzer import analyze_with_ai

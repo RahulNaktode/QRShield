@@ -10,3 +10,4 @@ motor
 pymongo
 gTTS
 pycryptodome
+python-dotenv
