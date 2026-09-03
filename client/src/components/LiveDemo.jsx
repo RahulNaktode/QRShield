@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import Gauge from "./Gauge";
 
-const ANALYZE_ENDPOINT = "http://localhost:5000/api/analyze-qr";
+const ANALYZE_ENDPOINT = `${import.meta.env.VITE_API_URL}/api/analyze-qr`;
 
 function LiveDemo({
   t,

@@ -51,7 +51,7 @@ function QRShieldPage() {
     try {
       const scanType = fileName ? "image" : "url";
 
-      const response = await fetch("http://localhost:8000/api/analyze-qr", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/analyze-qr`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

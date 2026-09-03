@@ -7,7 +7,7 @@ export function useScanHistory(refreshTrigger) {
   const fetchHistory = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/api/history");
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/history`);
       const data = await res.json();
       if (data.status === "success") {
         setHistory(data.history);
@@ -21,7 +21,7 @@ export function useScanHistory(refreshTrigger) {
 
   const clearHistory = async () => {
     try {
-      await fetch("http://localhost:8000/api/history", { method: "DELETE" });
+      await fetch(`${import.meta.env.VITE_API_URL}/api/history`, { method: "DELETE" });
       setHistory([]);
     } catch (err) {
       console.error("MongoDB history clear failed:", err);
