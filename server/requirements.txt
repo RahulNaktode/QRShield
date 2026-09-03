@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+numpy
+pandas
+scipy
+torch
+google-generativeai
+motor
+pymongo
+gTTS
+pycryptodome

@@ -3,6 +3,7 @@ import { ShieldAlert, ShieldCheck, Trash2, Clock, Image as ImageIcon, Link as Li
 import { useScanHistory } from "../hook/useScanHistory.js";
 import Header from "../components/Header.jsx";
 import { I18N } from "../data/i18n";
+import Footer from "../components/Footer.jsx";
 
 export default function ScanHistory({ refreshTrigger, initialLang = "en" }) {
   const [currentLang, setCurrentLang] = useState(initialLang);
@@ -101,6 +102,7 @@ export default function ScanHistory({ refreshTrigger, initialLang = "en" }) {
         )}
       </section>
     </div>
+    <Footer t={t} />
     </div>
   );
 }

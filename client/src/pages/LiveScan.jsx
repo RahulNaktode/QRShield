@@ -4,6 +4,7 @@ import axios from 'axios';
 import { ShieldAlert, ShieldCheck, Camera, RefreshCw, Loader2, Sparkles, Globe } from 'lucide-react';
 import Header from '../components/Header';
 import { I18N } from "../data/i18n";
+import Footer from '../components/Footer';
 
 
 export default function App({ initialLang = "en" }) {
@@ -230,6 +231,7 @@ export default function App({ initialLang = "en" }) {
 
         </div>
       </div>
+      <Footer t={t} />
     </div>
   );
 }

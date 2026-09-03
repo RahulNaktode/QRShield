@@ -141,7 +141,7 @@ function QRShieldPage() {
   };
 
   return (
-    <div className="bg-[#0A0E15] text-[#EAEEF6] min-h-screen w-full font-sans selection:bg-[#4C7CF3] selection:text-white">
+    <div className="bg-[#0A0E15] text-[#EAEEF6] min-h-screen w-full font-sans p-4 sm:p-8">
       
        <div className="mb-8">
         <span className="font-mono text-xs text-[#4C7CF3] tracking-wider">
