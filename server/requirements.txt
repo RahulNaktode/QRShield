@@ -5,7 +5,7 @@ numpy
 pandas
 scipy
 torch
-google-generativeai
+google-genai
 motor
 pymongo
 gTTS
